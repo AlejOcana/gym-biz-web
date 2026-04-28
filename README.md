@@ -1,6 +1,6 @@
 # FitZone Gym - Business Website with Admin Panel
 
-A modern, responsive business website for small businesses featuring an integrated content management system. Built with Angular 18+, Tailwind CSS, and localStorage persistence.
+A modern, responsive business website for small businesses featuring an integrated content management system. Built with Angular 21, Tailwind CSS, and localStorage persistence.
 
 ## Overview
 
@@ -17,7 +17,7 @@ This solution provides a professional website with an integrated, lightweight ad
 
 ## Technical Stack
 
-- **Framework:** Angular 18+ (standalone components, Signals)
+- **Framework:** Angular 21 (standalone components, Signals)
 - **Styling:** Tailwind CSS 3
 - **State Management:** Angular Signals with localStorage persistence
 - **Forms:** Reactive Forms with validation
