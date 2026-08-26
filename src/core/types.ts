@@ -15,6 +15,8 @@ export interface ServiceItem {
   description: string;
   icon: string;
   order: number;
+  imageUrl?: string;
+  imageAttribution?: string;
 }
 
 export interface NewsItem {
