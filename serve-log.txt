@@ -1,0 +1,29 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +85
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 85, reused 85, downloaded 0, added 85, done
+ INFO  Accepting connections at http://localhost:4176
+ HTTP  26/8/2026 14:18:35 ::1 GET /
+ HTTP  26/8/2026 14:18:35 ::1 Returned 200 in 52 ms
+ HTTP  26/8/2026 14:19:13 ::1 GET /
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 1 ms
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/index-D_X_TbI5.js
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/index-CBIbrOk7.css
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 2 ms
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 2 ms
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/inter-latin-wght-normal-Dx4kXJAl.woff2
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/jetbrains-mono-latin-400-normal-V6pRDFza.woff2
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/manrope-latin-wght-normal-DHIcAJRg.woff2
+ HTTP  26/8/2026 14:19:13 ::1 GET /assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2
+ HTTP  26/8/2026 14:19:13 ::1 GET /favicon.svg
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 3 ms
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 5 ms
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 4 ms
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 5 ms
+ HTTP  26/8/2026 14:19:13 ::1 Returned 200 in 3 ms
+ HTTP  26/8/2026 14:22:11 ::1 GET /
+ HTTP  26/8/2026 14:22:11 ::1 Returned 304 in 0 ms
+ HTTP  26/8/2026 14:22:11 ::1 GET /assets/index-D_X_TbI5.js
+ HTTP  26/8/2026 14:22:11 ::1 GET /assets/index-CBIbrOk7.css
+ HTTP  26/8/2026 14:22:11 ::1 Returned 304 in 1 ms
+ HTTP  26/8/2026 14:22:11 ::1 Returned 304 in 1 ms

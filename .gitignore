@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+serve-log.txt
+build-log.txt
+npm-debug.log*
+pnpm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
