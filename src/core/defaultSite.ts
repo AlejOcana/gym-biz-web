@@ -12,10 +12,10 @@ export const DEFAULT_SITE: SiteContent = {
     ctaText: '¡Pide tu primera clase gratuita!',
   },
   services: [
-    { id: 's1', name: 'Spinning', description: 'Clases de bicicleta indoor con música y motivación a tope', icon: 'bike', order: 1, imageUrl: 'https://picsum.photos/seed/fitness-spinning/800/600' },
-    { id: 's2', name: 'Musculación', description: 'Sala de pesas con equipamiento profesional y asesoramiento', icon: 'dumbbell', order: 2, imageUrl: 'https://picsum.photos/seed/fitness-weights/800/600' },
-    { id: 's3', name: 'Yoga', description: 'Clases de yoga para cuidar cuerpo y mente', icon: 'lotus', order: 3, imageUrl: 'https://picsum.photos/seed/fitness-yoga/800/600' },
-    { id: 's4', name: 'Boxeo', description: 'Entrenamiento de boxeo para todos los niveles', icon: 'boxing', order: 4, imageUrl: 'https://picsum.photos/seed/fitness-boxing/800/600' },
+    { id: 's1', name: 'Spinning', description: 'Clases de bicicleta indoor con música y motivación a tope', icon: 'bike', order: 1, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80', imageAttribution: 'Foto: Unsplash — Spinning' },
+    { id: 's2', name: 'Musculación', description: 'Sala de pesas con equipamiento profesional y asesoramiento', icon: 'dumbbell', order: 2, imageUrl: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&auto=format&fit=crop&q=80', imageAttribution: 'Foto: Unsplash — Musculación' },
+    { id: 's3', name: 'Yoga', description: 'Clases de yoga para cuidar cuerpo y mente', icon: 'lotus', order: 3, imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80', imageAttribution: 'Foto: Unsplash — Yoga' },
+    { id: 's4', name: 'Boxeo', description: 'Entrenamiento de boxeo para todos los niveles', icon: 'boxing', order: 4, imageUrl: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&auto=format&fit=crop&q=80', imageAttribution: 'Foto: Unsplash — Boxeo' },
   ],
   schedule: [
     { id: 'sch1', dayOfWeek: 1, className: 'Spinning', time: '08:00', instructor: 'María', duration: 45, capacity: 12 },

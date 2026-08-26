@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+﻿import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useApp } from '../core/store';
 import { BOOKING_ERRORS, createBooking, seatsLeft } from '../core/booking';
@@ -13,17 +13,6 @@ const NAV = [
   { href: '#entrenadores', label: 'Entrenadores' },
   { href: '#contacto', label: 'Contacto' },
 ];
-
-const EMOJI: Record<string, string> = {
-  bike: '🚴',
-  dumbbell: '🏋️',
-  lotus: '🧘',
-  boxing: '🥊',
-};
-
-function ServiceIcon({ name }: { name: string }) {
-  return <span aria-hidden="true" style={{ fontSize: '1.6rem', lineHeight: 1 }}>{EMOJI[name] ?? '●'}</span>;
-}
 
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
@@ -86,7 +75,7 @@ function BookingModal({ session, onClose }: { session: ScheduleItem; onClose: ()
       >
         {done ? (
           <>
-            <div className="success-note">¡Reserva confirmada! Te esperamos el {DAY_NAMES[session.dayOfWeek - 1]} a las {session.time}.</div>
+            <div className="success-note">Â¡Reserva confirmada! Te esperamos el {DAY_NAMES[session.dayOfWeek - 1]} a las {session.time}.</div>
             <button type="button" className="btn btn-primary btn-block" onClick={onClose}>
               Hecho
             </button>
@@ -97,7 +86,7 @@ function BookingModal({ session, onClose }: { session: ScheduleItem; onClose: ()
               Reservar {session.className}
             </h3>
             <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1rem' }}>
-              {DAY_NAMES[session.dayOfWeek - 1]} · {session.time} · {session.duration} min{session.instructor ? ` · ${session.instructor}` : ''}
+              {DAY_NAMES[session.dayOfWeek - 1]} Â· {session.time} Â· {session.duration} min{session.instructor ? ` Â· ${session.instructor}` : ''}
             </p>
             <div className="field">
               <label htmlFor="bk-name">Nombre</label>
@@ -163,7 +152,7 @@ export function PublicSite() {
 
   const submitContact = () => {
     if (form.name.trim().length < 2 || !form.email.includes('@') || form.message.trim().length < 5) {
-      setFormError('Completa tu nombre, un email válido y tu mensaje.');
+      setFormError('Completa tu nombre, un email vÃ¡lido y tu mensaje.');
       return;
     }
     addMessage({
@@ -222,7 +211,7 @@ export function PublicSite() {
             </button>
           </nav>
 
-          <button type="button" className="mobile-menu-btn" aria-label="Abrir menú" onClick={() => setMenuOpen((v) => !v)}>
+          <button type="button" className="mobile-menu-btn" aria-label="Abrir menÃº" onClick={() => setMenuOpen((v) => !v)}>
             {menuOpen ? (
               <svg width={24} height={24} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -369,9 +358,6 @@ export function PublicSite() {
                           }}
                         />
                         <div className="service-img-gradient" aria-hidden="true" />
-                        <div className="service-icon service-icon--over">
-                          <ServiceIcon name={s.icon} />
-                        </div>
                       </div>
                       <div className="service-body">
                         <h3>{s.name}</h3>
@@ -397,7 +383,7 @@ export function PublicSite() {
           >
             <div className="container-custom">
               <motion.div variants={itemVars}>
-                <SectionHead title="Novedades" subtitle="Mantente informado de las últimas noticias y eventos" />
+                <SectionHead title="Novedades" subtitle="Mantente informado de las Ãºltimas noticias y eventos" />
               </motion.div>
               <motion.div className="news-grid" variants={containerVars}>
                 {activeNews.map((n) => (
@@ -434,10 +420,10 @@ export function PublicSite() {
         >
           <div className="container-custom">
             <motion.div variants={itemVars}>
-              <SectionHead title="Horarios" subtitle="Elige el día y reserva tu plaza — sin permanencia" />
+              <SectionHead title="Horarios" subtitle="Elige el dÃ­a y reserva tu plaza â€” sin permanencia" />
             </motion.div>
 
-            <motion.div className="day-tabs" role="tablist" aria-label="Día de la semana" variants={itemVars}>
+            <motion.div className="day-tabs" role="tablist" aria-label="DÃ­a de la semana" variants={itemVars}>
               {daysWithClasses.map((d) => (
                 <motion.button
                   key={d}
@@ -488,9 +474,9 @@ export function PublicSite() {
                           >
                             <td style={{ fontWeight: 600, color: 'var(--primary)' }}>{s.className}</td>
                             <td style={{ color: '#4b5563' }}>
-                              {s.time} · {s.duration}′
+                              {s.time} Â· {s.duration}â€²
                             </td>
-                            <td style={{ color: '#6b7280' }}>{s.instructor || '—'}</td>
+                            <td style={{ color: '#6b7280' }}>{s.instructor || 'â€”'}</td>
                             <td>
                               <span className={`seats ${seatClass}`}>{left === 0 ? 'Completo' : `${left} libres`}</span>
                             </td>
@@ -511,7 +497,7 @@ export function PublicSite() {
                       })}
                     </tbody>
                   </table>
-                  {daySessions.length === 0 && <p style={{ padding: '1.5rem', textAlign: 'center', color: '#6b7280' }}>No hay clases este día.</p>}
+                  {daySessions.length === 0 && <p style={{ padding: '1.5rem', textAlign: 'center', color: '#6b7280' }}>No hay clases este dÃ­a.</p>}
                 </motion.div>
               </AnimatePresence>
             </motion.div>
@@ -535,7 +521,7 @@ export function PublicSite() {
             </motion.div>
 
             <motion.div className="billing-toggle" variants={itemVars}>
-              <div className="billing-pill" role="group" aria-label="Periodo de facturación">
+              <div className="billing-pill" role="group" aria-label="Periodo de facturaciÃ³n">
                 <button type="button" className={`billing-opt ${billing === 'month' ? 'billing-opt--on' : ''}`} onClick={() => setBilling('month')}>
                   Mensual
                 </button>
@@ -562,7 +548,7 @@ export function PublicSite() {
                       {p.isPopular && <div className="popular-tag">Popular</div>}
                       <h3 className="price-name">{p.name}</h3>
                       <div className="price-amount">
-                        {price}€ <small>/{billing === 'year' ? 'año' : 'mes'}</small>
+                        {price}â‚¬ <small>/{billing === 'year' ? 'aÃ±o' : 'mes'}</small>
                       </div>
                       <ul className="price-features">
                         {p.features.map((f, i) => (
@@ -655,12 +641,12 @@ export function PublicSite() {
         >
           <div className="container-custom">
             <motion.div variants={itemVars}>
-              <SectionHead title="Contacto" subtitle="¿Tienes alguna pregunta? Contáctanos y te responderemos ASAP" />
+              <SectionHead title="Contacto" subtitle="Â¿Tienes alguna pregunta? ContÃ¡ctanos y te responderemos ASAP" />
             </motion.div>
             <motion.div className="contact-grid" variants={containerVars}>
               <motion.div className="card contact-info-card" variants={itemVars} whileHover={prefersReduced ? undefined : { y: -2 }} transition={{ duration: 0.2 }}>
                 <h3 style={{ fontFamily: 'Poppins, system-ui, sans-serif', fontWeight: 600, color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
-                  Información de contacto
+                  InformaciÃ³n de contacto
                 </h3>
                 <div className="contact-line">
                   <div className="contact-icon">
@@ -680,7 +666,7 @@ export function PublicSite() {
                     </svg>
                   </div>
                   <div>
-                    <p style={{ fontSize: '0.82rem', color: '#9ca3af' }}>Teléfono</p>
+                    <p style={{ fontSize: '0.82rem', color: '#9ca3af' }}>TelÃ©fono</p>
                     <p style={{ fontWeight: 500 }}>{site.contact.phone}</p>
                   </div>
                 </div>
@@ -692,7 +678,7 @@ export function PublicSite() {
                     </svg>
                   </div>
                   <div>
-                    <p style={{ fontSize: '0.82rem', color: '#9ca3af' }}>Dirección</p>
+                    <p style={{ fontSize: '0.82rem', color: '#9ca3af' }}>DirecciÃ³n</p>
                     <p style={{ fontWeight: 500 }}>
                       {site.contact.address}, {site.contact.city}
                     </p>
@@ -724,9 +710,9 @@ export function PublicSite() {
 
               <motion.div className="card" variants={itemVars} whileHover={prefersReduced ? undefined : { y: -2 }} transition={{ duration: 0.2 }}>
                 <h3 style={{ fontFamily: 'Poppins, system-ui, sans-serif', fontWeight: 600, color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
-                  Envíanos un mensaje
+                  EnvÃ­anos un mensaje
                 </h3>
-                {formSent && <div className="success-note">¡Mensaje enviado correctamente! Te responderemos pronto.</div>}
+                {formSent && <div className="success-note">Â¡Mensaje enviado correctamente! Te responderemos pronto.</div>}
                 <div className="field">
                   <label htmlFor="ct-name">Nombre</label>
                   <input id="ct-name" className="input" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" />
@@ -737,7 +723,7 @@ export function PublicSite() {
                 </div>
                 <div className="field">
                   <label htmlFor="ct-msg">Mensaje</label>
-                  <textarea id="ct-msg" className="textarea" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="¿En qué podemos ayudarte?" />
+                  <textarea id="ct-msg" className="textarea" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Â¿En quÃ© podemos ayudarte?" />
                 </div>
                 {formError && <p className="field-error">{formError}</p>}
                 <motion.button
@@ -768,7 +754,7 @@ export function PublicSite() {
               </p>
             </div>
             <div>
-              <h4>Enlaces rápidos</h4>
+              <h4>Enlaces rÃ¡pidos</h4>
               <ul className="footer-links">
                 <li>
                   <a href="#servicios">Servicios</a>
