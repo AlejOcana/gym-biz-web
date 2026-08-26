@@ -99,6 +99,21 @@ function Login() {
         <button type="button" className="btn btn--primary" style={{ width: '100%', marginTop: '0.6rem', borderRadius: '0.7rem', padding: '0.8rem' }} onClick={submit}>
           Entrar al panel
         </button>
+        <button
+          type="button"
+          className="login-demo-btn"
+          onClick={() => {
+            setEmail(DEMO_CREDENTIALS.email);
+            setPassword(DEMO_CREDENTIALS.password);
+            setError(false);
+          }}
+          aria-label="Rellenar usuario y contraseña demo"
+        >
+          <svg width={16} height={16} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>Rellenar demo</span>
+        </button>
         <p className="login-hint">
           demo · <b>{DEMO_CREDENTIALS.email}</b> / <b>{DEMO_CREDENTIALS.password}</b>
         </p>
