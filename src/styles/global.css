@@ -44,6 +44,14 @@ h1, h2, h3, h4, h5, h6 {
 button { font: inherit; }
 a { color: inherit; text-decoration: none; }
 
+/* Cursor UX: default everywhere, hand only on interactive */
+html, body { cursor: default; }
+a, button, [role="button"], .btn, .btn-primary, .btn-secondary, .btn-outline, .admin-link, .day-tab, .billing-opt, .mobile-menu-btn {
+  cursor: pointer;
+}
+input, textarea, select { cursor: text; }
+.card, .service-card, .price-card, .trainer-card, .schedule-wrap, .hero, .section { cursor: default; }
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
