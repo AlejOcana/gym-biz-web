@@ -7,9 +7,9 @@ export const DEFAULT_SITE: SiteContent = {
   hero: {
     title: 'Transforma tu cuerpo',
     subtitle:
-      'Entrena con los mejores profesionales en instalaciones de primera categoría. Tu primera clase es gratis.',
-    imageUrl: '',
-    ctaText: 'Pide tu primera clase gratuita',
+      'Entrena con los mejores profesionales en instalaciones de primera categoría',
+    imageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80',
+    ctaText: '¡Pide tu primera clase gratuita!',
   },
   services: [
     { id: 's1', name: 'Spinning', description: 'Clases de bicicleta indoor con música y motivación a tope', icon: 'bike', order: 1 },

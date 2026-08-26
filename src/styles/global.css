@@ -1,117 +1,72 @@
-/* ============ GymBiz v2 — design tokens ============ */
+/* GymBiz — restored original palette (FitZone Gym) · single light theme, no dark mode */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
 :root {
-  color-scheme: dark;
-
-  --bg-0: #0c0f0a;
-  --bg-1: #11150d;
-  --bg-2: #171c12;
-  --line: rgba(163, 230, 53, 0.1);
-  --line-strong: rgba(163, 230, 53, 0.22);
-
-  --text-hi: #eef2e4;
-  --text-mid: #b3bda3;
-  --text-low: #828c72;
-
-  --accent: #a3e635;
-  --accent-soft: #bef264;
-  --accent-deep: #4d7c0f;
-  --accent-dim: rgba(163, 230, 53, 0.1);
-  --accent-fg: #131a05;
-
-  --topbar-bg: rgba(12, 15, 10, 0.85);
-  --selection-bg: rgba(163, 230, 53, 0.25);
-
-  --font-display: 'Manrope Variable', 'Manrope', system-ui, sans-serif;
-  --font-body: 'Inter Variable', 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --radius: 14px;
+  --primary: #1a1a2e;
+  --primary-light: #2d2d44;
+  --primary-dark: #0f0f1a;
+  --accent: #e94560;
+  --accent-light: #ff6b84;
+  --accent-dark: #c93650;
+  --surface: #fafafa;
+  --card: #ffffff;
+  --text-800: #1f2937;
+  --text-600: #4b5563;
+  --text-500: #6b7280;
+  --text-400: #9ca3af;
+  --line: #e5e7eb;
+  --line-soft: #f3f4f6;
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
-:root[data-theme='light'] {
-  color-scheme: light;
-
-  --bg-0: #f7f9f0;
-  --bg-1: #ffffff;
-  --bg-2: #edf1e2;
-  --line: rgba(60, 80, 20, 0.1);
-  --line-strong: rgba(60, 80, 20, 0.2);
-
-  --text-hi: #161a0d;
-  --text-mid: #4a523c;
-  --text-low: #6b7458;
-
-  --accent: #4d7c0f;
-  --accent-soft: #3f6212;
-  --accent-deep: #365314;
-  --accent-dim: rgba(77, 124, 15, 0.09);
-  --accent-fg: #ffffff;
-
-  --topbar-bg: rgba(255, 255, 255, 0.92);
-  --selection-bg: rgba(77, 124, 15, 0.18);
-}
-
-/* ============ Reset & base ============ */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-}
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg-0);
-  color: var(--text-hi);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--surface);
+  color: var(--text-800);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, p { margin: 0; }
-button { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; }
-input, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 
-::selection { background: var(--selection-bg); }
+button { font: inherit; }
+a { color: inherit; text-decoration: none; }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 4px;
 }
+
+::selection { background: rgba(233, 69, 96, 0.2); }
+
+/* utilities that mimic the original Tailwind helpers */
+.container-custom {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) { .container-custom { padding-inline: 1.5rem; } }
+@media (min-width: 1024px) { .container-custom { padding-inline: 2rem; } }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.5s ease-out; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+.animate-bounce { animation: bounce 1.2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
-
-.app-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(46rem 26rem at 88% -8%, rgba(163, 230, 53, 0.08), transparent 60%),
-    radial-gradient(34rem 20rem at 0% 110%, rgba(163, 230, 53, 0.05), transparent 60%);
-}
-
-:root[data-theme='light'] .app-bg {
-  background:
-    radial-gradient(46rem 26rem at 88% -8%, rgba(77, 124, 15, 0.06), transparent 60%),
-    radial-gradient(34rem 20rem at 0% 110%, rgba(101, 163, 41, 0.04), transparent 60%);
-}
-
-.container {
-  width: min(76rem, 100% - 2.5rem);
-  margin-inline: auto;
-}
-
-.mono { font-family: var(--font-mono); }
